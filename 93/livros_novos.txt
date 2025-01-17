@@ -1,0 +1,3 @@
+Criando um segundo cérebro
+Web scraping com Python
+Inteligência Artificial
