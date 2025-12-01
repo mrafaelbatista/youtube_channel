@@ -1,0 +1,30 @@
+{% extends "modelo.html" %}
+{% block conteudo %}
+
+<div class="d-flex justify-content-center align-items-center pt-3">
+    <h1>Edição de Termo</h1>
+</div>
+<div class="container pt-3">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <form action="{{ url_for('salvar_termo', termo_id=termo.id) }}" method="post">
+                <div class="mb-3">
+                    <label for="termo" class="form-label">Termo</label>
+                    <input class="form-control" id="termo"
+                           name="termo" aria-describedby="termoHelp" value="{{ termo.termo }}">
+                    <div id="termoHelp" class="form-text">Termo a ser adicionado.</div>
+                </div>
+                <div class="mb-3">
+                    <label for="descricao" class="form-label">Definição</label>
+                    <textarea class="form-control" id="definicao"
+                              name="definicao" aria-describedby="definicaoHelp">{{ termo.definicao }}</textarea>
+                    <div id="definicaoHelp" class="form-text">Definição a ser adicionada.</div>
+                </div>
+                <button type="submit" class="btn btn-primary">Salvar</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
